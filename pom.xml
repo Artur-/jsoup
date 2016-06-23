@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <name>jsoup</name>
 
-  <groupId>org.jsoup</groupId>
+  <groupId>com.vaadin.external.jsoup</groupId>
   <artifactId>jsoup-case-sensitive</artifactId>
   <version>1.9.2</version>
   <description>jsoup HTML parser</description>
