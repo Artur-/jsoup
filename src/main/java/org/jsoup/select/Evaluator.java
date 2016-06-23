@@ -194,7 +194,7 @@ public abstract class Evaluator {
 
         @Override
         public boolean matches(Element root, Element element) {
-            return element.hasAttr(key) && element.attr(key).toLowerCase().startsWith(value); // value is lower case already
+            return element.hasAttr(key) && element.attr(key).startsWith(value);
         }
 
         @Override
@@ -214,7 +214,7 @@ public abstract class Evaluator {
 
         @Override
         public boolean matches(Element root, Element element) {
-            return element.hasAttr(key) && element.attr(key).toLowerCase().endsWith(value); // value is lower case
+            return element.hasAttr(key) && element.attr(key).endsWith(value);
         }
 
         @Override
@@ -234,7 +234,7 @@ public abstract class Evaluator {
 
         @Override
         public boolean matches(Element root, Element element) {
-            return element.hasAttr(key) && element.attr(key).toLowerCase().contains(value); // value is lower case
+            return element.hasAttr(key) && element.attr(key).contains(value); 
         }
 
         @Override
@@ -252,7 +252,7 @@ public abstract class Evaluator {
         Pattern pattern;
 
         public AttributeWithValueMatching(String key, Pattern pattern) {
-            this.key = key.trim().toLowerCase();
+            this.key = key.trim();
             this.pattern = pattern;
         }
 
@@ -279,12 +279,12 @@ public abstract class Evaluator {
             Validate.notEmpty(key);
             Validate.notEmpty(value);
 
-            this.key = key.trim().toLowerCase();
+            this.key = key.trim();
             if (value.startsWith("\"") && value.endsWith("\"")
                     || value.startsWith("'") && value.endsWith("'")) {
                 value = value.substring(1, value.length()-1);
             }
-            this.value = value.trim().toLowerCase();
+            this.value = value.trim();
         }
     }
 

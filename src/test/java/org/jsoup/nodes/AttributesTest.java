@@ -12,7 +12,7 @@ import org.junit.Test;
 public class AttributesTest {
     @Test public void html() {
         Attributes a = new Attributes();
-        a.put("Tot", "a&p");
+        a.put("tot", "a&p");
         a.put("Hello", "There");
         a.put("data-name", "Jsoup");
 
@@ -24,7 +24,7 @@ public class AttributesTest {
         assertEquals("Jsoup", a.dataset().get("name"));
         assertEquals("a&p", a.get("tot"));
 
-        assertEquals(" tot=\"a&amp;p\" hello=\"There\" data-name=\"Jsoup\"", a.html());
+        assertEquals(" tot=\"a&amp;p\" Hello=\"There\" data-name=\"Jsoup\"", a.html());
         assertEquals(a.html(), a.toString());
     }
 
